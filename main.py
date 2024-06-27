@@ -83,3 +83,10 @@ except TimeoutException:
     driver.quit()
     exit()
 time.sleep(1)
+
+div = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[4]/div[2]/div/div/div[3]/div[3]')
+
+print(div.text)
+
+# Close the WebDriver
+driver.quit()
