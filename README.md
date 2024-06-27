@@ -1,0 +1,1 @@
+I made a python fetcher that fetches how many times i have climbed this week. I wanted to build this because i found it irritating for me to check and login every time. Hope that you can check out the code and maybe learn something :)
