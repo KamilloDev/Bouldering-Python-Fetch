@@ -54,3 +54,19 @@ password_field = driver.find_element(By.XPATH, '//*[@id="BRP_MODAL_CONTAINER"]/d
 username_field.send_keys("THE USERNAME")
 password_field.send_keys("THE PASSWORD")
 password_field.send_keys(Keys.RETURN)
+
+time.sleep(2)
+# Wait for login to complete by checking if redirected or if the target page is accessible
+try:
+    WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.ID, "root"))
+    )
+except TimeoutException:
+    print("Login might not be successful or page took too long to load.")
+    print("Current URL:", driver.current_url)
+    print("Page Source:", driver.page_source)
+    driver.quit()
+    exit()
+
+# Navigate to the target page if not redirected automatically
+driver.get(target_page_url)
