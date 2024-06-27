@@ -70,3 +70,16 @@ except TimeoutException:
 
 # Navigate to the target page if not redirected automatically
 driver.get(target_page_url)
+
+# Wait for the content to load
+try:
+    WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.ID, "root"))
+    )
+except TimeoutException:
+    print("Protected page content took too long to load or element not found.")
+    print("Current URL:", driver.current_url)
+    print("Page Source:", driver.page_source)
+    driver.quit()
+    exit()
+time.sleep(1)
