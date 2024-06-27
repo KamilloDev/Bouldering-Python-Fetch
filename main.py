@@ -46,3 +46,11 @@ try:
     cookie_accept_button.click()
 except TimeoutException:
     print("No remember consent pop-up found or it took too long to load.")
+
+# Find the username and password fields and enter the credentials
+username_field = driver.find_element(By.XPATH, '//*[@id="BRP_MODAL_CONTAINER"]/div/div[2]/div/div[2]/div/form/div[2]/div/div[2]/input')
+password_field = driver.find_element(By.XPATH, '//*[@id="BRP_MODAL_CONTAINER"]/div/div[2]/div/div[2]/div/form/div[3]/div/div[2]/div[1]/input')
+
+username_field.send_keys("THE USERNAME")
+password_field.send_keys("THE PASSWORD")
+password_field.send_keys(Keys.RETURN)
