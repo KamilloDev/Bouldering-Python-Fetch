@@ -8,3 +8,10 @@ import time
 
 # Set up Chrome options (optional)
 options = webdriver.ChromeOptions()
+
+# Initialize the WebDriver
+driver = webdriver.Chrome(options=options)
+
+# Define the login page URL and the target URL after login
+login_page_url = "https://boulders.goactivebooking.com/login"
+target_page_url = "https://boulders.goactivebooking.com/my-pages"
